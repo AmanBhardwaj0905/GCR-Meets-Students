@@ -1,0 +1,333 @@
+body {
+    margin: 0 0;
+}
+
+.container {
+    width: 450px;
+    height: fit-content;
+    padding: 16px;
+    min-height: 450px;
+    border: 5px solid black;
+}
+
+.logo {
+    position: relative;
+    width: 86px;
+    float: left;
+    height: 71px;
+}
+
+.minusButton {
+    display: block;
+    float: right;
+    margin-left: 2px;
+    margin-right: 2px;
+    width: 40px;
+    height: 40px;
+}
+
+.plusButton {
+    display: block;
+    float: right;
+    margin-left: 2px;
+    margin-right: 16px;
+    width: 40px;
+    height: 40px;
+}
+
+.heading {
+    position: relative;
+    height: fit-content;
+    font-style: oblique;
+    margin-left: 20%;
+    font-weight: bold;
+    font-size: 32px;
+    font-family: "Courier New", sans-serif;
+    color: #99a3ba;
+    width: 100%;
+}
+
+.innerContainer {
+    position: relative;
+    border-radius: 16px;
+    height: fit-content;
+    width: 418px;
+    padding: 16px;
+    background-color: #99a3ba;
+}
+
+.button {
+    background-color: #eef4ff;
+    border: 0;
+    min-width: 9em;
+    margin-top: 12px;
+    margin-right: 1em;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 12px;
+    color: #99a3ba;
+    font-family: "Myriad Pro", "Arial", sans, sans-serif;
+    text-align: center;
+    font-size: 14px;
+}
+
+.button:hover {
+    background-color: #678efe;
+    color: #fff;
+}
+
+/* Text Fields - Starts */
+.formInput {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 6px;
+    -webkit-appearance: none;
+    color: #99a3ba;
+    border: 1px solid #cdd9ed;
+    background: #fff;
+    transition: border 0.3s ease;
+}
+
+.formInput::placeholder {
+    color: #cbd1dc;
+}
+
+.formInput:focus {
+    outline: none;
+    border-color: #678efe;
+}
+
+.formContainer {
+    position: relative;
+    margin-bottom: 16px;
+    display: flex;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.formContainer > span, .formContainer .formInput {
+    white-space: nowrap;
+    display: block;
+}
+
+.formContainer > span:not(:first-child):not(:last-child), .formContainer .formInput:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+.formContainer > span:first-child, .formContainer .formInput:first-child {
+    border-radius: 6px 0 0 6px;
+}
+
+.formContainer > span:last-child, .formContainer .formInput:last-child {
+    border-radius: 0 6px 6px 0;
+}
+
+.formContainer > span:not(:first-child), .formContainer .formInput:not(:first-child) {
+    margin-left: -1px;
+}
+
+.formContainer .formInput {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.formContainer > span {
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 25px;
+    color: #99a3ba;
+    background: #eef4ff;
+    border: 1px solid #cdd9ed;
+    transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+
+.formContainer:focus-within > span {
+    color: #fff;
+    background: #678efe;
+    border-color: #275efe;
+}
+
+/* Text Fields - Ends */
+
+
+/* DropDown Select - Starts */
+
+.selectedContainer {
+    min-width: 18.5em;
+    position: relative;
+    display: inline-block;
+    margin-right: 1em;
+    min-height: 2em;
+    max-height: 2em;
+    overflow: scroll;
+    cursor: pointer;
+    text-align: left;
+    white-space: nowrap;
+    color: #99a3ba;
+    font-family: "Myriad Pro", "Arial", sans, sans-serif;
+    font-size: 16px;
+    outline: none;
+    border: 0.06em solid transparent;
+    border-radius: 6px;
+    background-color: #eef4ff;
+    transition: 0.3s all ease-in-out;
+}
+
+.selectedContainer input:focus + label {
+    background: #def;
+}
+
+.selectedContainer input {
+    width: 1px;
+    height: 1px;
+    display: inline-block;
+    position: absolute;
+    opacity: 0.01;
+}
+
+.selectedContainer label {
+    border-top: 0.06em solid #d9d9d9;
+    display: block;
+    height: 2em;
+    line-height: 2em;
+    padding-left: 1em;
+    padding-right: 3em;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s color ease-in-out;
+}
+
+.selectedContainer label:nth-child(2) {
+    margin-top: 2em;
+    border-top: 0.06em solid #d9d9d9;
+}
+
+.selectedContainer input:checked + label {
+    display: block;
+    border-top: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.selectedContainer input:checked + label:nth-child(2) {
+    margin-top: 0;
+    position: relative;
+}
+
+.selectedContainer::after {
+    content: "";
+    position: absolute;
+    right: 0.8em;
+    top: 0.9em;
+    border: 0.3em solid #99a3ba;
+    border-color: #99a3ba transparent transparent transparent;
+    transition: 0.4s all ease-in-out;
+}
+
+.selectedContainer.expanded {
+    border: 1px solid #275efe;
+    background: #fff;
+    border-radius: 0.25em;
+    padding: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 5px 0;
+    max-height: 15em;
+}
+
+.selectedContainer.expanded label {
+    border-top: 0.06em solid #d9d9d9;
+}
+
+.selectedContainer.expanded label:hover {
+    font-weight: bold;
+}
+
+.selectedContainer.expanded input:checked + label {
+    color: #99a3ba;
+}
+
+.selectedContainer.expanded::after {
+    transform: rotate(-180deg);
+    top: 0.55em;
+}
+
+/* DropDown Select - Ends */
+
+/* Snackbar Animations - Starts */
+#snackbar {
+    visibility: hidden;
+    width: fit-content;
+    height: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 12px;
+    padding: 12px;
+    position: relative;
+    bottom: 5px;
+    z-index: 1;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 5px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 5px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 5px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 5px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+/* Snackbar Animations - Ends */

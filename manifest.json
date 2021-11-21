@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "GCR Meets Student",
+  "description": "When GCR Meets Students ❤️",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "js": [
+        "main.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "icons": {
+    "192": "images/logo.png"
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "browser_action": {
+    "default_icon": "images/logo.png",
+    "default_popup": "index.html"
+  }
+}
